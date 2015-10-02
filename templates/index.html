@@ -5,13 +5,41 @@
 </head>
 <body>
     <h1>Kitaabistan</h1>
-
+    <hr/>
     <h2>Books I Own</h2>
+    {% for book in books %}
+        {% if book.owned %}
+            <li>{{ book.title }}</li>
+        {% endif %}
+    {% endfor %}
 
     <h2>Books I Want To Read</h2>
+    {% for book in books %}
+        {% if book.to_read %}
+            <li>{{ book.title }}</li>
+        {% endif %}
+    {% endfor %}
 
     <h2>Books I Want to Buy</h2>
+    {% for book in books %}
+        {% if not book.owned %}
+            <li>{{ book.title }}</li>
+        {% endif %}
+    {% endfor %}
 
     <h2>Books I Have Read</h2>
+    {% for book in books %}
+        {% if not book.to_read %}
+            <li>{{ book.title }}</li>
+        {% endif %}
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+    <hr/>
+
+    <h2>Add Books to Kitaabistan!</h2>
+
+
 </body>
 </html>
