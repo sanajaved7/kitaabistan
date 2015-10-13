@@ -9,31 +9,35 @@
 <body>
     <h1>Kitaabistan</h1>
     <hr/>
-    <h2>Books I Own</h2>
+    <h2>Books I Own:</h2>
     {% for book in books %}
         {% if book.owned %}
-            <li>{{ book.title }}</li>
+            <li>{{ book.title }} by {{book.author}} </li>
+            <br>
         {% endif %}
     {% endfor %}
 
-    <h2>Books I Want To Read</h2>
+    <h2>Books I Want To Read:</h2>
     {% for book in books %}
         {% if book.to_read %}
-            <li>{{ book.title }}</li>
+            <li>{{ book.title }} by {{book.author}} </li>
+            <br>
         {% endif %}
     {% endfor %}
 
-    <h2>Books I Want to Buy</h2>
+    <h2>Books I Want to Buy:</h2>
     {% for book in books %}
         {% if not book.owned %}
-            <li>{{ book.title }}</li>
+            <li>{{ book.title }} by {{book.author}} </li>
+            <br>
         {% endif %}
     {% endfor %}
 
-    <h2>Books I Have Read</h2>
+    <h2>Books I Have Read:</h2>
     {% for book in books %}
         {% if not book.to_read %}
-            <li>{{ book.title }}</li>
+            <li>{{ book.title }} by {{book.author}} </li>
+            <br>
         {% endif %}
     {% endfor %}
     <br>
