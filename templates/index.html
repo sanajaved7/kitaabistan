@@ -3,50 +3,78 @@
 <html>
 <head>
     <title>Kitaabistan</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type='text/css' href="{% static "css/normalize.css" %}">
     <link rel="stylesheet" type='text/css' href="{% static "css/main.css" %}">
 </head>
+
 <body>
-    <h1>Kitaabistan</h1>
+    <div class="container">
+        <div class="row col-md-12 page-header" >
+            <h1>Kitaabistan</h1>
+        </div>
+    <div class="container">
+        <div class="row col-md-12">
+        <h2>Books I Own:</h2>
+        {% for book in books %}
+            {% if book.owned %}
+                <ul style="list-style: none;">
+                <li>{{ book.title }} by {{book.author}} </li>
+                </ul>
+                <br>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <div class="row col-md-12">
+        <h2>Books I Want To Read:</h2>
+        {% for book in books %}
+            {% if book.to_read %}
+                <ul style="list-style: none">
+                <li>{{ book.title }} by {{book.author}} </li>
+                <br>
+                </ul>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <div class="row col-md-12">
+        <h2>Books I Want to Buy:</h2>
+        {% for book in books %}
+            {% if not book.owned %}
+                <ul style="list-style: none">
+                <li>{{ book.title }} by {{book.author}} </li>
+                <br>
+                </ul>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <div class="row col-md-12">
+        <h2>Books I Have Read:</h2>
+        {% for book in books %}
+            {% if not book.to_read %}
+                <ul style="list-style: none;">
+                <li>{{ book.title }} by {{book.author}} </li>
+                <br>
+                </ul>
+            {% endif %}
+        {% endfor %}
+        </div>
     <hr/>
-    <h2>Books I Own</h2>
-    {% for book in books %}
-        {% if book.owned %}
-            <li>{{ book.title }}</li>
-        {% endif %}
-    {% endfor %}
-
-    <h2>Books I Want To Read</h2>
-    {% for book in books %}
-        {% if book.to_read %}
-            <li>{{ book.title }}</li>
-        {% endif %}
-    {% endfor %}
-
-    <h2>Books I Want to Buy</h2>
-    {% for book in books %}
-        {% if not book.owned %}
-            <li>{{ book.title }}</li>
-        {% endif %}
-    {% endfor %}
-
-    <h2>Books I Have Read</h2>
-    {% for book in books %}
-        {% if not book.to_read %}
-            <li>{{ book.title }}</li>
-        {% endif %}
-    {% endfor %}
-    <br>
-    <br>
-    <br>
-    <hr/>
-
-    <h2>Add Books to Kitaabistan!</h2>
-    <form action='/' method='post'>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-    </form>
+    </div>
+    <div class="container">
+        <div class="row col-md-12" id="add">
+        <h2>Add Books to Kitaabistan!</h2>
+        <form action='/' method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-group btn-group-lg" aria-label="Left Align" value="Submit">
+      <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Submit</button>
+        </form>
+        </div>
+    </div>
+</div>
 
 
 </body>

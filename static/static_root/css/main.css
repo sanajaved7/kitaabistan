@@ -1,4 +1,36 @@
 
-h1, h2, h3, h4, h5, h6 {
-    color: #1E5373;
+body {
+    font-family: monospace;
+    font-size: 18px;
+}
+
+h1 {
+    color: #99FFCC;
+    font-size: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+h2, h3, h4, h5, h6 {
+    color: orange;
+}
+
+body {
+    background-color: gray;
+    color: #99FFCC;
+    text-align: center;
+}
+
+#add {
+    background-color: #535353;
+    text-align: center;
+}
+
+.page-header {
+    text-align: center;
+}
+
+button {
+    background-color: orange;
+    color: white;
 }
