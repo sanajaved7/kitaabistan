@@ -7,12 +7,12 @@
     <link rel="stylesheet" type='text/css' href="{% static "css/normalize.css" %}">
     <link rel="stylesheet" type='text/css' href="{% static "css/main.css" %}">
 </head>
-
 <body>
-    <div class="container">
-        <div class="row col-md-12 page-header" >
-            <h1>Kitaabistan</h1>
+    <header>
+        <div class="title">
+        <h1>Kitaabistan</h1>
         </div>
+    </header>
     <div class="container">
         <div class="row col-md-12">
         <h2>Books I Own:</h2>
@@ -64,14 +64,16 @@
     <hr/>
     </div>
     <div class="container">
-        <div class="row col-md-12" id="add">
+        <div class="row col-md-12 add" id="add">
         <h2>Add Books to Kitaabistan!</h2>
+        <br>
         <form action='/' method='post'>
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn-group btn-group-lg" aria-label="Left Align" value="Submit">
       <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Submit</button>
         </form>
+        <br>
         </div>
     </div>
 </div>
