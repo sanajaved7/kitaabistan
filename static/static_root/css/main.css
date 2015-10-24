@@ -2,23 +2,18 @@
 body {
     font-family: monospace;
     font-size: 18px;
-}
-
-h1 {
-    color: #99FFCC;
-    font-size: 50px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-h2, h3, h4, h5, h6 {
-    color: orange;
-}
-
-body {
     background-color: gray;
     color: #99FFCC;
     text-align: center;
+}
+
+/*h1 {
+    color: black;
+    font-size: 50px;
+}*/
+
+h2, h3, h4, h5, h6 {
+    color: black;
 }
 
 #add {
@@ -26,11 +21,50 @@ body {
     text-align: center;
 }
 
-.page-header {
-    text-align: center;
+.add h2 {
+    color: white;
 }
 
 button {
     background-color: orange;
     color: white;
+}
+
+img {
+ max-height: 100%;
+ max-width: 100%;
+}
+
+/*.jumbotron {
+    color: black;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    background-color: #99FFCC;
+}*/
+
+header {
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(http://41.media.tumblr.com/tumblr_llrmnuseOJ1qzb5wzo1_1280.jpg);
+  background-size: cover;
+  height: 40vh;
+}
+
+.title {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 6rem;
+    white-space: nowrap;
 }
