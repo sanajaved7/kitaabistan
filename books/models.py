@@ -1,5 +1,16 @@
 from django.db import models
 
+class Author(models.Model):
+    """
+    This model stores all the authors and their associated information.
+    """
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.first_name + " " + self.last_name
+
+
 class Book(models.Model):
     """
     This model stores all the books and their pertaining information.
@@ -12,13 +23,13 @@ class Book(models.Model):
 
     """
     title = models.CharField(max_length=100)
-    author = models.CharField(max_length=100)
+    author = models.ForeignKey(Author)
     genre = models.CharField(max_length=75)
     owned = models.BooleanField()
     to_read = models.BooleanField()
 
     def __str__(self):
-        return self.title + " by " + self.author
+        return self.title
 
     class Meta:
         """
@@ -26,3 +37,4 @@ class Book(models.Model):
         the database.
         """
         unique_together = (("title", "author"),)
+
