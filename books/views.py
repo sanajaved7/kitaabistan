@@ -12,11 +12,19 @@ def index(request):
     if request.method == 'POST':
         form = BookForm(request.POST)
         if form.is_valid():
+
             if form.cleaned_data['new_author'] != "":
                 author = clean_author(form.cleaned_data['new_author'])
             else:
                 author = form.cleaned_data['author']
-            new_book = Book(title = form.cleaned_data['title'], genre = form.cleaned_data['genre'], owned = form.cleaned_data['owned'], to_read = form.cleaned_data['to_read'], author=author)
+
+            new_book = Book(
+                title = form.cleaned_data['title'],
+                genre = form.cleaned_data['genre'],
+                owned = form.cleaned_data['owned'],
+                to_read = form.cleaned_data['to_read'],
+                author=author
+            )
             new_book.save()
             form = BookForm()
     else:
