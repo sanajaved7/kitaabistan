@@ -10,12 +10,17 @@
 <body>
     <header>
         <div class="title">
-        <h1>Kitaabistan</h1>
+            <h1>Kitaabistan</h1>
+        <div class="line">
+            <h3><a href="#own">Books I Own</a></h3>
+            <h3><a href="#read">Books To Read</a></h3>
+            <h3><a href="#buy">Books To Buy</a></h3>
+        </div>
         </div>
     </header>
     <div class="container">
         <div class="row col-md-12">
-        <h2>Books I Own:</h2>
+        <h2><a name="own">Books I Own:</a></h2>
         {% for book in books %}
             {% if book.owned %}
                 <ul style="list-style: none;">
@@ -27,7 +32,7 @@
         </div>
 
         <div class="row col-md-12">
-        <h2>Books I Want To Read:</h2>
+        <h2><a name="read">Books I Want To Read:</a></h2>
         {% for book in books %}
             {% if book.to_read %}
                 <ul style="list-style: none">
@@ -39,7 +44,7 @@
         </div>
 
         <div class="row col-md-12">
-        <h2>Books I Want to Buy:</h2>
+        <h2><a name="buy">Books I Want to Buy:</a></h2>
         {% for book in books %}
             {% if not book.owned %}
                 <ul style="list-style: none">
@@ -62,7 +67,6 @@
         {% endfor %}
         </div>
     <hr/>
-    </div>
     <div class="container">
         <div class="row col-md-12 add" id="add">
         <h2>Add Books to Kitaabistan!</h2>
@@ -71,12 +75,12 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn-group btn-group-lg" aria-label="Left Align" value="Submit">
-      <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Submit</button>
+      <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Add Book</button>
         </form>
         <br>
         </div>
     </div>
-</div>
+    </div>
 
 
 </body>
