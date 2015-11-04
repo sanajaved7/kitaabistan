@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Author(models.Model):
     """
@@ -24,6 +25,7 @@ class Book(models.Model):
     """
     title = models.CharField(max_length=100)
     author = models.ForeignKey(Author)
+    user = models.ForeignKey(User)
     genre = models.CharField(max_length=75)
     owned = models.BooleanField()
     to_read = models.BooleanField()
@@ -34,7 +36,8 @@ class Book(models.Model):
     class Meta:
         """
         Prevent duplicate books by the same author being added into
-        the database.
+        the database of each user.
         """
-        unique_together = (("title", "author"),)
+        unique_together = ("title", "author", "user")
+
 
