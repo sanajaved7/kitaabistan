@@ -1,13 +1,6 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Kitaabistan</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type='text/css' href="{% static "css/normalize.css" %}">
-    <link rel="stylesheet" type='text/css' href="{% static "css/main.css" %}">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block body %}
     <header>
         <div class="title">
             <h1>Kitaabistan</h1>
@@ -87,7 +80,4 @@
         <br>
         <a href="/login">Login</a>
     {% endif %}
-
-
-</body>
-</html>
+{% endblock %}

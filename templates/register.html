@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Kitaabistan</title>
-</head>
-<body>
-    <h1>Register with Kitaabistan</h1>
+{% extends 'base.html' %}
+
+{% block body %}
+    <h3>Register with Kitaabistan</h3>
     {% if registered %}
         <h3>Thanks for registering! <a href="/">Check out your library.</a></h3>
     {% else %}
@@ -16,5 +13,5 @@
         <input type="submit" name="submit" value="Register"/>
         </form>
     {% endif %}
-</body>
-</html>
+
+{% endblock %}

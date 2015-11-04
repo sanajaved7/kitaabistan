@@ -1,34 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <script type="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script type="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
-    <title>Kitaabistan</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<h1>Login</h1>
+{% block body %}
+    <h1>Login</h1>
 
-<form id="login_form" method="post">
-{% csrf_token %}
-Username: <input type="text" name="username" value="" size="50"/>
-Password: <input type="password" name="password" value="" size="50"/>
-<input type="submit" value="submit"/>
-</form>
+    <form id="login_form" method="post">
+    {% csrf_token %}
+    Username: <input type="text" name="username" value="" size="50"/>
+    Password: <input type="password" name="password" value="" size="50"/>
+    <input type="submit" value="submit"/>
+    </form>
 
-<div id="signinButton">
-    <span class='g-signin'
-        data-scope="openid email"
-        data-clientid = ""
-        data-redirecturi= "postmessage"
-        data-accesstype = "offline"
-        data-cookiepolicy = "single_host_origin"
-        data-callback = "signInCallback"
-        data-approvalprompt = "force">
-    </span>
-</div>
-<div id="result">
-</div>
+    <div id="signinButton">
+        <span class='g-signin'
+            data-scope="openid email"
+            data-clientid = ""
+            data-redirecturi= "postmessage"
+            data-accesstype = "offline"
+            data-cookiepolicy = "single_host_origin"
+            data-callback = "signInCallback"
+            data-approvalprompt = "force">
+        </span>
+    </div>
+    <div id="result">
+    </div>
 
-</body>
-</html>
+{% endblock %}
