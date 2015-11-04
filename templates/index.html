@@ -11,9 +11,12 @@
     <header>
         <div class="title">
             <h1>Kitaabistan</h1>
+        {% if user.is_authenticated %}
         <div class="line">
             <h3><a href="#own">Books I Own&nbsp;</a></h3><h3><a href="#read">Books To Read</a></h3><h3><a href="#buy">Books To Buy</a></h3><h3><a href="#add">Add Books</a></h3>
         </div>
+        <br>
+        <a href="/logout">Logout</a>
         </div>
     </header>
     <div class="container">
@@ -79,6 +82,11 @@
         </div>
     </div>
     </div>
+    {% else %}
+        <a href="/register">Register Here</a>
+        <br>
+        <a href="/login">Login</a>
+    {% endif %}
 
 
 </body>
