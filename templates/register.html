@@ -3,9 +3,9 @@
 {% block body %}
     <h3>Register with Kitaabistan</h3>
     {% if registered %}
-        <h3>Thanks for registering! <a href="/">Check out your library.</a></h3>
+        <h3>Thanks for registering! <a href="/login">Login now!</a></h3>
     {% else %}
-        <form id="user_form" method="post" action="/register/" enctype="multipart/form-data">
+        <form id="user_form" method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         {{ user_form.as_p }}
