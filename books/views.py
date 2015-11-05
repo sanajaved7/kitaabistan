@@ -19,7 +19,7 @@ def register(request):
             print(user_form.errors)
     else:
         user_form = UserForm()
-    return render(request, 'register.html', {'user_form': user_form})
+    return render(request, 'register.html', {'user_form': user_form, 'registered': registered})
 
 def user_login(request):
     if request.method == 'POST':
