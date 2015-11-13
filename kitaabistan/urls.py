@@ -21,6 +21,8 @@ urlpatterns = [
     url(r'^$', 'books.views.index', name='index'),
     url(r'^register/$', 'books.views.register', name='register'),
     url(r'^login/$', 'books.views.user_login', name='login'),
-    url(r'^logout/$', 'books.views.user_logout', name='logout')
+    url(r'^logout/$', 'books.views.user_logout', name='logout'),
+    url(r'^api/v1/books/$', 'books.views.book_collection'),
+    url(r'^api/v1/books/(?P<pk>[0-9]+)$', 'books.views.book_element'),
 
 ]
