@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
 
 {% block body %}
-    <h1>Login</h1>
-
+    <header class="login">
+        <div class="logintitle">
+            <h1>Kitaabistan</h1>
+        </div>
+    </header>
+    <div class="container" id="add">
+    <h2>Login</h2>
+    <br>
     <form id="login_form" method="post">
     {% csrf_token %}
-    Username: <input type="text" name="username" value="" size="50"/>
-    Password: <input type="password" name="password" value="" size="50"/>
-    <input type="submit" value="submit"/>
+    Username <input type="text" name="username" value="" size="30"/>
+    <br>
+    <br>
+    Password <input type="password" name="password" value="" size="30"/>
+    <br>
+    <br>
+    <input type="submit" value="Login"/>
     </form>
+    </div>
 
     <div id="signinButton">
         <span class='g-signin'
