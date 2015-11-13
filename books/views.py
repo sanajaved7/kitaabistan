@@ -4,6 +4,9 @@ from .forms import BookForm, UserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import BookSerializer
 
 def register(request):
     registered = False
@@ -72,3 +75,24 @@ def index(request):
         form = BookForm()
     books = Book.objects.filter(user=request.user.id)
     return render(request, 'index.html', context={'books':books, 'form':form})
+
+
+
+@api_view(['GET'])
+def book_collection(request):
+    if request.method == 'GET':
+        books = Book.objects.all()
+        serializer = BookSerializer(books, many=True)
+        return Response(serializer.data)
+
+
+@api_view(['GET'])
+def book_element(request, pk):
+    try:
+        book = Book.objects.get(pk=pk)
+    except Book.DoesNotExist:
+        return HttpResponse(status=400)
+
+    if request.method == 'GET':
+        serializer = BookSerializer(book)
+        return Response(serializer.data)
