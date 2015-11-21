@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Book, Author
+from .models import Book, Author, User
 from .forms import BookForm, UserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -67,7 +67,8 @@ def index(request):
                 genre = form.cleaned_data['genre'],
                 owned = form.cleaned_data['owned'],
                 to_read = form.cleaned_data['to_read'],
-                author=author
+                author = author,
+                user = User.objects.get(pk=request.user.id),
             )
             new_book.save()
             form = BookForm()
