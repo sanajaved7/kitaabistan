@@ -26,7 +26,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECRET_KEY = 'ao846y3z%=+dze4dh9(0uqyf1jyc9l_od&u^ot#$#2tg7d%pa*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", False)
 
 ALLOWED_HOSTS = ['*']
 
