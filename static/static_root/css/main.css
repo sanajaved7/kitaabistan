@@ -26,6 +26,124 @@ h2, h3, h4, h5, h6, a {
     color: white;
 }
 
+
+button {
+    background-color: black;
+    color: white;
+}
+
+.line {
+    display: flex;
+}
+
+img {
+ max-height: 100%;
+ max-width: 100%;
+}
+
+input {
+    color: black;
+}
+
+header {
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(http://41.media.tumblr.com/tumblr_llrmnuseOJ1qzb5wzo1_1280.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.login header{
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(http://41.media.tumblr.com/tumblr_llrmnuseOJ1qzb5wzo1_1280.jpg);
+  background-size: cover;
+  height: 10vh;
+
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.logintitle {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 8rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+    .line {
+    display: inline;
+}
+    h1 {
+        font-size: 5rem;
+    }
+
+    header{
+        height: 60vh;
+    }
+
+    .title{
+        top:30%;
+    }
+
+    #add{
+        text-align: left;
+    }
+
+}
+
+
+/*
+body {
+    font-family: monospace;
+    font-size: 18px;
+    background-color: black;
+    color: #99FFCC;
+    text-align: center;
+}
+
+a:hover {
+    color: #99FFCC;
+}
+
+
+h2, h3, h4, h5, h6, a {
+    color: white;
+}
+
+#add {
+    background-color: rgba(200, 54, 54, 0.3);
+    text-align: center;
+    color: white;
+}
+
+.add h2 {
+    color: white;
+}
+
 button {
     background-color: black;
     color: white;
@@ -88,7 +206,8 @@ h1 {
     }
 
     #add{
-        text-align: left;
+        text-align: center;
     }
 
 }
+*/
