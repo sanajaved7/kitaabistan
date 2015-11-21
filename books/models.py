@@ -11,6 +11,13 @@ class Author(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name
 
+    class Meta:
+        """
+        Prevent duplicate authors being added into
+        the database of each user.
+        """
+        unique_together = ("first_name", "last_name")
+
 
 class Book(models.Model):
     """
